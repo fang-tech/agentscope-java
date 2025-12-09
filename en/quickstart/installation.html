@@ -409,6 +409,14 @@
         <article role="main" id="furo-main-content">
           <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>AgentScope Java supports multiple LLM providers, RAG backends, and extension features, each requiring different third-party SDKs. If we bundled everything into a single package, your project would be bloated with dependencies you may never use—increasing JAR size, slowing builds, and risking version conflicts.</p>
+<p>To balance <strong>ease of use</strong> and <strong>dependency control</strong>, we provide two approaches:</p>
+<ul class="simple">
+<li><p><strong>All-in-one</strong>: A single dependency with sensible defaults (DashScope SDK, MCP SDK). Perfect for getting started quickly—add extra dependencies only when needed.</p></li>
+<li><p><strong>Core + extensions</strong>: Start with a minimal core, then add only the extension modules you actually use. Ideal for production environments with strict dependency requirements.</p></li>
+</ul>
+<p><strong>Our recommendation:</strong> Start with all-in-one for rapid development. Switch to core + extensions when you need to optimize dependency footprint or resolve conflicts.</p>
+<p><strong>Future plan:</strong> We are working on replacing model provider SDKs with native HTTP implementations. This will significantly reduce external dependencies while maintaining full compatibility with all supported models.</p>
 <p>AgentScope Java requires <strong>JDK 17 or higher</strong>.</p>
 <section id="dependency-options">
 <h2>Dependency Options<a class="headerlink" href="#dependency-options" title="Link to this heading">¶</a></h2>
@@ -440,12 +448,12 @@
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
 <span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.agentscope<span class="nt">&lt;/groupId&gt;</span>
 <span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>agentscope<span class="nt">&lt;/artifactId&gt;</span>
-<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.1<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
 <p><strong>Gradle:</strong></p>
-<div class="highlight-gradle notranslate"><div class="highlight"><pre><span></span>implementation &#39;io.agentscope:agentscope:1.0.0&#39;
+<div class="highlight-gradle notranslate"><div class="highlight"><pre><span></span>implementation &#39;io.agentscope:agentscope:1.0.1&#39;
 </pre></div>
 </div>
 <section id="default-transitive-dependencies">
@@ -591,12 +599,12 @@
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="nt">&lt;dependency&gt;</span>
 <span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.agentscope<span class="nt">&lt;/groupId&gt;</span>
 <span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>agentscope-core<span class="nt">&lt;/artifactId&gt;</span>
-<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.1<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
 <p><strong>Gradle:</strong></p>
-<div class="highlight-gradle notranslate"><div class="highlight"><pre><span></span>implementation &#39;io.agentscope:agentscope-core:1.0.0&#39;
+<div class="highlight-gradle notranslate"><div class="highlight"><pre><span></span>implementation &#39;io.agentscope:agentscope-core:1.0.1&#39;
 </pre></div>
 </div>
 <section id="extension-modules">
@@ -636,7 +644,7 @@
 <span class="nt">&lt;dependency&gt;</span>
 <span class="w">    </span><span class="nt">&lt;groupId&gt;</span>io.agentscope<span class="nt">&lt;/groupId&gt;</span>
 <span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>agentscope-extensions-mem0<span class="nt">&lt;/artifactId&gt;</span>
-<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.0<span class="nt">&lt;/version&gt;</span>
+<span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0.1<span class="nt">&lt;/version&gt;</span>
 <span class="nt">&lt;/dependency&gt;</span>
 </pre></div>
 </div>
@@ -698,7 +706,7 @@
             Made with 
             <a href="https://github.com/pradyunsg/furo">Furo</a>
             <div class="last-updated">
-              Last updated on 2025-12-04</div>
+              Last updated on 2025-12-09</div>
           </div>
           <div class="right-details">
             <div class="icons">
